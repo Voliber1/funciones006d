@@ -27,7 +27,7 @@ def validar_huesped(nombre):
 
 
 def validar_habitacion(habitacion):
-    return habitacion.isdigit() and 1 <= int(habitacion) <= 200
+    return habitacion.isdigit() and int(habitacion)>=1 and int(habitacion) <= 200
 
 
 def validar_noches(noches):
@@ -39,17 +39,20 @@ def validar_noches(noches):
 
 def agregar_reserva(reservas):
     huesped = input("Nombre del huésped: ")
-    if not validar_huesped(huesped):
+    validacion=validar_huesped(huesped)
+    if not validacion:
         print("Error: el nombre del huésped no puede estar vacío.")
         return
 
     habitacion = input("Número de habitación (1-200): ")
-    if not validar_habitacion(habitacion):
+    validacion=validar_habitacion(habitacion)
+    if not validacion:
         print("Error: la habitación debe ser un número entero entre 1 y 200.")
         return
 
     noches = input("Cantidad de noches: ")
-    if not validar_noches(noches):
+    validacion=validar_noches(noches)
+    if not validacion:
         print("Error: las noches deben ser un número entero mayor que cero.")
         return
 
