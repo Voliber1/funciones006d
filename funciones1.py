@@ -25,5 +25,5 @@ while True:
             break
     except ValueError:
         print("error")
-#llamar funcion
+#llamar funcion xd
 datos_productos(nombre,stock,precio)
